@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta a Gemini</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+
+        header img {
+            max-width: 150px;
+        }
+
+        h1 {
+            color: #bb86fc;
+            margin: 20px 0;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #1f1f1f;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        textarea, input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #121212;
+            color: #e0e0e0;
+            box-sizing: border-box;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #bb86fc;
+            color: #121212;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #3700b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #333;
+            background-color: #1f1f1f;
+            border-radius: 10px;
+            white-space: pre-wrap;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #1f1f1f;
+            border-top: 1px solid #333;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            color: #777;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .container img {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .review {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+    
+        .review img {
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .description {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: linear-gradient(145deg, #1f1f1f, #2c2c2c);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            color: #e0e0e0;
+        }
+
+        .description h3 {
+            color: #bb86fc;
+            margin-bottom: 20px;
+        }
+
+        .reviews h3 {
+            color: #bb86fc;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin: 40px auto;
+            font-size: 40px;
+            text-align: center;
+           
+        }
+
+        .description p {
+            margin: 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Logo_de_la_Universidad_Veracruzana.svg" alt="Gemini AI Logo">
+        <h2>Una herramienta para facilitar tu vida</h2>
+        <p>Chat Inteligente</p>
+    </header>
+
+    <div class="container">
+        <h1>Consulta a la API de Gemini IA</h1>
+        <img src="https://innovacion.uas.edu.mx/wp-content/uploads/2023/08/las-preguntas-mas-frecuentes-sobre-la-realidad-virtual-y-la-inteligencia-artificial.jpg" alt="Technology Image">
+    </div>
+
+    <form id="geminiForm">
+        <textarea id="consulta" placeholder="Ingresa tu consulta aquí..."></textarea>
+        <input type="file" id="imagen" accept="image/*">
+        <button type="submit">Enviar Consulta</button>
+    </form>
+    <div id="result"></div>
+
+    <div class="reviews">
+        <h3>Opiniones de Clientes</h3>
+        <div class="review">
+            <img src="https://scontent.fver2-1.fna.fbcdn.net/v/t39.30808-6/416382370_1485468215645098_3747813277959944821_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGRLTlq7CXa13O1eoZkifpyOQEH8sauB545AQfyxq4Hntf-b8liy-2SGoix1bDg8K9g_8XEOb4ndp4Lu0Dr2UTy&_nc_ohc=zsGfR7XXKD8Q7kNvgF4zrMF&_nc_ht=scontent.fver2-1.fna&oh=00_AYDnZ4VaZzVMPyj_18FjNwLjJrbFao8P4yBww0H_pacnew&oe=665B3168" alt="Cliente 1" height="80" width="80">
+            <p><strong>Jennifer Cruz:</strong> "Gemini AI ha revolucionado la forma en que trabajo. Es como tener un asistente personal las 24 horas del día."</p>
+        </div>
+        <div class="review">
+            <img src="https://scontent.fver2-1.fna.fbcdn.net/v/t39.30808-6/341034689_170189485924256_3121567807860425753_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGMXIJd7Vb_SshNtLLftX3YQvjFQyv5HwpC-MVDK_kfCsfydD-XGv0iy5KxWX6ng2FFjuIeasRCeugUa32f52ZM&_nc_ohc=uhQnGzio25kQ7kNvgE7qdgh&_nc_ht=scontent.fver2-1.fna&oh=00_AYB7AY4zb7mdJ_meOTZcXWSNBA5G5_Lt_A-QJA2DnnUIIA&oe=665B6913" alt="Cliente 2" height="80" width="80">
+            <p><strong>Ana Muñoz:</strong> "La precisión y rapidez de Gemini son impresionantes. Recomiendo esta herramienta a todos mis colegas."</p>
+        </div>
+        <div class="review">
+            <img src="https://scontent.fver2-1.fna.fbcdn.net/v/t39.30808-1/434150616_1093809071867354_1139806286583148247_n.jpg?stp=dst-jpg_p100x100&_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFyDPjeHLm6cknmPCfb4F08MNinmp6i8UEw2KeanqLxQdEaTK-JB-Wz37dUjC6ZasNS9Vf7ZYUcEYIwCDBpHZao&_nc_ohc=QsglANrAfAcQ7kNvgH9s8xx&_nc_ht=scontent.fver2-1.fna&oh=00_AYA5EfIpjv5EeFvtGBH4owmVyvD0BN7Vl8r0ulxE7al7-Q&oe=665B475A" alt="Cliente 3" height="80" width="80">
+            <p><strong>Marisol C:</strong> "Nunca había utilizado una IA tan eficiente. Gemini me ha ahorrado mucho tiempo y esfuerzo."</p>
+        </div>
+    </div>
+
+    
+    <div class="description">
+        <h3>Descripción del Producto</h3>
+        <p>Gemini AI es una herramienta innovadora diseñada para facilitar tu vida. Utilizando inteligencia artificial avanzada, 
+            Gemini puede responder a tus preguntas, ayudarte con tareas diarias y proporcionarte información valiosa en tiempo real. 
+            Ideal para profesionales, estudiantes y cualquier persona que desee una asistente virtual confiable y eficiente.
+            Si tienes problemas con algún software, puedes describir el problema a Chat Inteligente y obtener posibles soluciones. 
+            También es útil para responder preguntas generales sobre cualquier tema, desde ciencia hasta historia, proporcionando información rápida 
+            y precisa basada en su entrenamiento con una gran cantidad de datos.</p>
+        <img src="https://code.intef.es/wp-content/uploads/2023/07/cerebro.png" alt="Cliente 2">
+    </div>
+
+    
+
+    <footer>
+        <p>&copy; 2024 Gemini AI. Todos los derechos reservados. JARED CANO MARTINEZ  Universidad Veracruzana. Facultad de Ingeniería Eléctrica y de Electrónica</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById('geminiForm');
+        const consultaInput = document.getElementById('consulta');
+        const imagenInput = document.getElementById('imagen');
+        const resultDiv = document.getElementById('result');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const consulta = consultaInput.value.trim();
+            const imagen = imagenInput.files[0] || null;
+
+            if (!consulta) {
+                alert('Por favor, ingresa una consulta.');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('consulta', consulta);
+            if (imagen) {
+                formData.append('imagen', imagen);
+            }
+
+            try {
+                const response = await fetch('gemini.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    resultDiv.textContent = data.result || 'Respuesta no válida';
+                } else {
+                    resultDiv.textContent = `Error: ${data.error}`;
+                }
+            } catch (error) {
+                resultDiv.textContent = `Error: ${error.message}`;
+            }
+        });
+    </script>
+</body>
+</html>
